@@ -1,0 +1,22 @@
+[
+    {
+      "name": "${containername}",
+      "image": "${ecrimagelocation}",
+      "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+              "awslogs-group": "${logconfiguration}",
+              "awslogs-region": "eu-west-2",
+              "awslogs-stream-prefix": "web-service"
+          }
+      },
+      "cpu": 10,
+      "memory": 100,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 80
+        }
+      ]
+    }
+  ]
